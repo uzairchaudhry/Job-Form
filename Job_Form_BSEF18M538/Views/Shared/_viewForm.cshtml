@@ -1,0 +1,32 @@
+﻿@model List<Job_Form_BSEF18M538.Models.Application >;
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Place of Post</th>
+            <th>Post Applied for</th>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Edit</th>
+            <th>View</th>
+            <th>Delete</th>
+
+
+        </tr>
+
+        @{
+            foreach (var abc in Model)
+            {
+                <tr>
+                    <td>@abc.Place</td>
+                    <td>@abc.Applied</td>
+                    <td>@abc.Name</td>
+                    <td>@abc.Fname</td>
+                    <td><button class="btn btn-danger" onclick="edit(@abc.Id)">Edit</button></td>
+                    <td><button class="btn btn-danger" onclick="view(@abc.Id)">View</button></td>
+                    <td><button class="btn btn-danger" onclick="del(@abc.Id)">Delete</button></td>
+
+                </tr>
+            }
+        }
+
+    </table>

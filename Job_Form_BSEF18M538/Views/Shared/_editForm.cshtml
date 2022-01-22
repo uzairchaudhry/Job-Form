@@ -1,0 +1,198 @@
+﻿@model Job_Form_BSEF18M538.Models.Application;
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+<div class="container-fluid">
+    <div class="user1">
+        <form method="post" action="/home/edit" enctype="multipart/form-data">
+            <div class="row" id="d1">
+                <div class="col-sm-3" id="d11">
+                    <img class="img1" src="~/css/Images/logo.jpg" width="120" height="110" />
+                </div>
+                <div class="col-sm-6 col">
+                    <div>
+                        <p class="job">Job Application Form</p>
+                    </div>
+                    <div>
+                        <p class="fatimah">FATIMAH JINNAH MEDICAL UNIVERSITY</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 col" id="img">
+                    @{ if (Model.Image != null)
+                        {
+                    <img src="~/Images/@Model.Image" style="margin-top:5px" height="80" width="120" />
+                            }
+                        }
+                    <input name="oldimage" type="text" value="@Model.Image" hidden />
+                    <input name="Image" type="file" class="img-fluid" accept=".jpg" value="Upload image" />
+                </div>
+            </div>
+            <input name="Id" value="@Model.Id" hidden/>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Place of Posting</label>
+                <div class="col-sm-9">
+                    <input name="Place" class="form-control" type="text" value="@Model.Place" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Post applied for</label>
+                <div class="col-sm-9">
+                    <input name="Applied" class="form-control" type="text" value="@Model.Applied" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Name</label>
+                <div class="col-sm-9">
+                    <input name="Name" class="form-control" type="text" value="@Model.Name" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Father's Name</label>
+                <div class="col-sm-9">
+                    <input name="Fname" class="form-control" type="text" value="@Model.Fname" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Date of Birth</label>
+                <div class="col-sm-9">
+                    <input name="Dob" class="form-control" type="date" value="@Model.Dob" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">CNIC</label>
+                <div class="col-sm-9">
+                    <input name="Cnic" class="form-control" type="text" value="@Model.Cnic" />
+                </div>
+            </div><div class="form-group row">
+                <label class="col-sm-3 col-form-label">Domicile (Distric)</label>
+                <div class="col-sm-9">
+                    <input name="Domicile" class="form-control" type="text" value="@Model.Domicile" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Contact No</label>
+                <div class="col-sm-9">
+                    <input name="ContactNo" class="form-control" type="text" value="@Model.ContactNo" />
+                </div>
+            </div><div class="form-group row">
+                <label class="col-sm-3 col-form-label">Other Contact</label>
+                <div class="col-sm-9">
+                    <input name="OtherContactNo" class="form-control" type="text" value="@Model.OtherContactNo" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Postal Adress</label>
+                <div class="col-sm-9">
+                    <input name="PostalAddress" class="form-control" type="text" value="@Model.PostalAddress" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Permanent Adress</label>
+                <div class="col-sm-9">
+                    <input name="PermanentAddress" class="form-control" type="text" value="@Model.PermanentAddress" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input name="Email" class="form-control" type="email" value="@Model.Email" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Already in Govt Servicec</label>
+                <div class="col-sm-9" style="margin-top:10px;">
+                    @{
+                        string already = Model.Already;
+
+                        if (already.Contains("Yes"))
+                        {
+                            <input type="radio" name="Already" value="Yes" checked> <label>Yes</label>
+                            <input type="radio" name="Already" value="No"> <label>No</label>
+                        }
+                        else if (already.Contains("No"))
+                        {
+                            <input type="radio" name="Already" value="Yes"><label>Yes</label>
+                            <input type="radio" name="Already" value="No" checked> <label>No</label>
+                        }
+
+                    }
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Disability</label>
+                <div class="col-sm-9" style="margin-top:8px;">
+                    @{
+                        string disability = Model.Disability;
+
+                        if (disability.Contains("Yes"))
+                        {
+                            <input type="radio" name="Disability" value="Yes" checked> <label>Yes</label>
+                            <input type="radio" name="Disability" value="No"> <label>No</label>
+                        }
+                        else if (disability.Contains("No"))
+                        {
+                            <input type="radio" name="Disability" value="Yes"><label>Yes</label>
+                            <input type="radio" name="Disability" value="No" checked> <label>No</label>
+                        }
+
+                    }
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Hafiz-e-Quran/Ex-service</label>
+                <div class="col-sm-9" style="margin-top:10px;">
+                    @{
+                        string Hafiz1 = Model.Hafiz;
+
+                        if (Hafiz1.Contains("Yes"))
+                        {
+                            <input type="radio" name="Hafiz" value="Yes" checked> <label>Yes</label>
+                            <input type="radio" name="Hafiz" value="No"> <label>No</label>
+                        }
+                        else if (Hafiz1.Contains("No"))
+                        {
+                            <input type="radio" name="Hafiz" value="Yes"><label>Yes</label>
+                            <input type="radio" name="Hafiz" value="No" checked> <label>No</label>
+                        }
+
+                    }
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Religion</label>
+                <div class="col-sm-9">
+                    <input name="Religion" class="form-control" type="text" value="@Model.Religion" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Gender</label>
+                <div class="col-sm-9">
+                    <input name="Gender" class="form-control" type="text" value="@Model.Gender" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Marital Status</label>
+                <div class="col-sm-9" style="margin-top:8px;">
+                    @{
+                        string Martial = Model.Marital;
+
+                        if (Martial.Contains("Maried"))
+                        {
+                            <input type="radio" name="Marital" value="Maried" checked> <label>Married</label>
+                            <input type="radio" name="Marital" value="Single"> <label>Single</label>
+                        }
+                        else if (Martial.Contains("Single"))
+                        {
+                            <input type="radio" name="Marital" value="Maried"><label>Married</label>
+                            <input type="radio" name="Marital" value="Single" checked> <label>Single</label>
+                        }
+
+                    }
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left:25%">
+                <input type="submit" class="btn btn-success btn-lg" value="Edit Form" />
+            </div>
+        </form>
+    </div>
+</div>

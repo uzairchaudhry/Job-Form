@@ -1,0 +1,152 @@
+﻿@model Job_Form_BSEF18M538.Models.Application 
+<html>
+<head>
+    <title>Fill Form</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="user1">
+            <form method="post" action="/home/adduser" enctype="multipart/form-data">
+                <div class="row" id="d1">
+                    <div class="col-sm-3" id="d11">
+                        <img class="img1" src="~/css/Images/logo.jpg" width="120" height="110" />
+                    </div>
+                    <div class="col-sm-6 col">
+                        <div>
+                            <p class="job">Job Application Form</p>
+                        </div>
+                        <div>
+                            <p class="fatimah">FATIMAH JINNAH MEDICAL UNIVERSITY</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 col" id="img">
+                        <div class="img2">
+                            <input name="Image" type="file" class="img-fluid" value="Upload Image" accept="Image/*" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Place of Posting</label>
+                    <div class="col-sm-9">
+                        <input name="Place" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Post applied for</label>
+                    <div class="col-sm-9">
+                        <input name="Applied" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input name="Name" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Father's Name</label>
+                    <div class="col-sm-9">
+                        <input name="Fname" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input name="Dob" class="form-control" type="date" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">CNIC</label>
+                    <div class="col-sm-9">
+                        <input name="Cnic" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Domicile (Distric)</label>
+                    <div class="col-sm-9">
+                        <input name="Domicile" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Contact No</label>
+                    <div class="col-sm-9">
+                        <input name="ContactNo" class="form-control" type="text" required/>
+                    </div>
+                </div><div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Other Contact</label>
+                    <div class="col-sm-9">
+                        <input name="OtherContactNo" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Postal Adress</label>
+                    <div class="col-sm-9">
+                        <input name="PostalAddress" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Permanent Adress</label>
+                    <div class="col-sm-9">
+                        <input name="PermanentAddress" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input name="Email" class="form-control" type="email" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Already in Govt Servicec</label>
+                    <div class="col-sm-9" style="margin-top:10px;">
+                        <input type="radio" name="Already" value="Yes" required> Yes
+                        <input type="radio" name="Already" value="No"> No
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Disability</label>
+                    <div class="col-sm-9" style="margin-top:8px;">
+                        <input type="radio" name="Disability" value="Yes" required> Yes
+                        <input type="radio" name="Disability" value="No"> No
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Hafiz-e-Quran/Ex-service</label>
+                    <div class="col-sm-9" style="margin-top:10px;">
+                        <input type="radio" name="Hafiz" value="Yes" required> Yes
+                        <input type="radio" name="Hafiz" value="No"> No
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Religion</label>
+                    <div class="col-sm-9">
+                        <input name="Religion" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Gender</label>
+                    <div class="col-sm-9">
+                        <input name="Gender" class="form-control" type="text" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Marital Status</label>
+                    <div class="col-sm-9" style="margin-top:8px;">
+                        <input type="radio" name="Marital" value="Maried" required> Married
+                        <input type="radio" name="Marital" value="Single"> Single
+                    </div>
+                </div>
+                <div class="form-group row" style="margin-left:25%">
+                    <input type="submit" class="btn btn-success btn-lg" value="Add Form" />
+                </div>
+            </form>
+            <a class="btn btn-danger btn-lg" style="margin-left:25%;" href="/Home/Index">HomePage</a>
+        </div>
+        
+    </div>
+</body>
+</html>

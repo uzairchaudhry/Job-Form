@@ -1,0 +1,109 @@
+﻿
+<html>
+
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet1.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</head>
+
+<body onload="viewT()">
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="~/css/Images/logo.jpg" height="60">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                
+                <a href="#" class="nav-item nav-link active" style="color:red;">Admin</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="/home/logout" class="nav-item nav-link" style="color:red;">Logout</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row" id="v2">
+
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="mydiv">
+
+        </div>
+    </div>
+
+    <script>
+        function del(fid) {
+            $.ajax({
+                url: "/Home/delForm",
+                type: "post",
+                dataType: "html",
+                data: { id: fid },
+                success: function (data) {
+                    $("#v2").html(data);
+                    $("#mydiv").html("");
+                },
+                error: function () {
+
+                }
+            });
+        }
+        function edit(fid) {
+            $.ajax({
+                url: "/Home/editForm",
+                type: "post",
+                dataType: "html",
+                data: { id: fid },
+                success: function (data) {
+                    $("#mydiv").html(data);
+                },
+                error: function () {
+
+                }
+            });
+        }
+        function view(fid) {
+            $.ajax({
+                url: "/Home/getForm",
+                type: "post",
+                dataType: "html",
+                data: { id: fid },
+                success: function (data) {
+                    $("#mydiv").html(data);
+                },
+                error: function () {
+
+                }
+
+            });
+
+        }
+        function viewT() {
+            $.ajax({
+                url: "/Home/viewForm",
+                type: "post",
+                dataType: "html",
+                success: function (data) {
+                    $("#v2").html(data);
+                },
+                error: function () {
+
+                }
+
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>
